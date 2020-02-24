@@ -8,9 +8,10 @@ Your page will be built based on a random combination of cuisine, city, and desi
 
 ## Your team's combination: Seafood restaurants in Lisbon, Portugal
 
-Your team has been tasked with using the Zomato API to list Seafood restaurants in Lisbon, Portugal in the style of the Online Pizza site:
+Your team has been tasked with using the Zomato API to list Seafood restaurants in Lisbon, Portugal in the style of the Wolt site:
 
-![Online Pizza](https://i.imgur.com/CVh3zi0.jpg)
+![Wolt](https://i.imgur.com/MlNJIYD.png)
+
 
 ## How to complete this task
 
