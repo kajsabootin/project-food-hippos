@@ -17,7 +17,7 @@ fetch(url, { headers: { "user-key": apiKey } }
       <p>${resto.restaurant.name}</p> 
       <p>${resto.restaurant.location.address}</p>
       <p>${resto.restaurant.average_cost_for_two}</p>
-      <p>${resto.restaurant.user_rating.rating_text}</p>
+      <p>${resto.restaurant.user_rating.aggregate_rating}</p>
       <img src= ${ resto.restaurant.photos[0].photo.thumb_url}>
       </section>`
     })
