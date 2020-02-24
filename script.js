@@ -13,13 +13,13 @@ fetch(url, { headers: { "user-key": apiKey } }
     json.restaurants.forEach(resto => {
       console.log(resto.restaurant.name)
       restaurantContainer.innerHTML +=
-        `<section> 
-      <p>${resto.restaurant.name}</p> 
-      <p>${resto.restaurant.location.address}</p>
-      <p>${resto.restaurant.average_cost_for_two}</p>
-      <p>${resto.restaurant.user_rating.aggregate_rating}</p>
-      <img src= ${ resto.restaurant.photos[0].photo.thumb_url}>
-      </section>`
+        `<a href= ${resto.restaurant.url} class="resturant-card"> 
+      <h3>${resto.restaurant.name}</h3> 
+      <p class="address">${resto.restaurant.location.address}</p>
+      <p class="average-cost">${resto.restaurant.average_cost_for_two}</p>
+      <p class="rating">${resto.restaurant.user_rating.aggregate_rating}</p>
+      <img class="restaurant-image" src= ${resto.restaurant.photos[0].photo.thumb_url}>
+      </a>`
     })
   })
   .catch((err) => {
