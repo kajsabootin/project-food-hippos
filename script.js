@@ -9,6 +9,7 @@ const priceHigh = document.getElementById("highPrice");
 const buttonFilter = document.getElementById("filterButton");
 const ratingButton = document.getElementById("rating-button");
 
+//Choosing euro sign/-s from average cost
 const priceSymbol = cost => {
   if (cost <= 35) {
     return "€";
@@ -37,9 +38,9 @@ const smileIcon = ratingScore => {
   return iconPath;
 };
 
-//Table booking or not
-const bookTable = "<button class = 'booking-button'> Book Table </button>";
-const noTableBooking = "No table reservation";
+//Show if table booking is available or not
+const bookTable = "Book";
+const noTableBooking = "";
 
 const tableBooking = booking => {
   if (booking === 1) {
@@ -50,6 +51,7 @@ const tableBooking = booking => {
   return booking;
 };
 
+//Fetches data from API
 fetch(url, {
   headers: {
     "user-key": apiKey
@@ -61,7 +63,7 @@ fetch(url, {
   .then(json => {
     let filteredList = json.restaurants;
 
-    //show restaurant function
+    //Show restaurants
     const showRestaurants = () => {
       restaurantContainer.innerHTML = " ";
       filteredList.forEach(resto => {
@@ -74,7 +76,9 @@ fetch(url, {
         <h3>${resto.restaurant.name}</h3> 
         <div class="b-a-container">
         <p class="address">${resto.restaurant.location.address}</p>
-        <button class="booking-button">Book</button>
+        <button class="booking-button" id="booking-button">${tableBooking(
+          resto.restaurant.has_table_booking
+        )}</button>
         </div>
         <br>
         <p class="average-cost">${priceSymbol(
@@ -82,14 +86,11 @@ fetch(url, {
         )} <img class="smiley" src="${smileIcon(
           resto.restaurant.user_rating.aggregate_rating
         )}" alt="smiley">${resto.restaurant.user_rating.aggregate_rating}</p>
-        <p class="table-booking"> ${tableBooking(
-          resto.restaurant.has_table_booking
-        )} </p>
         </a>`;
       });
     };
 
-    //filters price
+    //filters restaurants on price range
     const filterPrice = () => {
       if (priceLow.checked) {
         filteredList = json.restaurants.filter(
@@ -109,7 +110,7 @@ fetch(url, {
       showRestaurants();
     };
 
-    //sort by aggregated rating
+    //sort restaurants by aggregated rating
     const sortByRating = () => {
       filteredList.sort(
         (a, b) =>
@@ -119,6 +120,7 @@ fetch(url, {
       showRestaurants();
     };
 
+    //buttons to call filter and sort functions
     buttonFilter.addEventListener("click", filterPrice);
     ratingButton.addEventListener("click", sortByRating);
 
