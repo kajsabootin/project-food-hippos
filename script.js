@@ -50,10 +50,12 @@ fetch(url, {
     const sortByRating = () => {
       //sort by aggregated rating
       json.restaurants.sort((a, b) => b.restaurant.user_rating.aggregate_rating - a.restaurant.user_rating.aggregate_rating)
+      console.log(json.restaurants)
     }
 
     ratingButton.addEventListener("click", sortByRating)
     // ratingButton.onclick = sortByRating()
+
 
 
     json.restaurants.forEach(resto => {
@@ -67,8 +69,6 @@ fetch(url, {
       <p class="table-booking"> ${tableBooking(resto.restaurant.has_table_booking)} </p>
       <img class="restaurant-image" src= ${resto.restaurant.photos[0].photo.thumb_url}>
       </a>`
-
-
 
     })
   })
