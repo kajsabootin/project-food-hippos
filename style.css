@@ -6,9 +6,16 @@ body {
 h1 {
   border-bottom: 1px solid #ececec;
   padding: 0 100px 20px 100px;
+  text-align: center;
 }
 
 h2 {
+  display: none;
+}
+
+.mobile-title {
+  display: block;
+  text-align: center;
 }
 
 h3 {
@@ -36,8 +43,30 @@ a {
   position: relative;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filter-container {
+  display: flex;
+}
+
+/* FORM */
+.filter button {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.filter p {
+  text-align: end;
+  padding: 0;
+  width: 100%;
+}
+
 .card-container {
-  padding: 0 100px;
+  padding: 0;
 }
 
 .restaurant-card {
@@ -52,15 +81,22 @@ a {
 }
 
 .average-cost {
-  border-top: 1px dashed #ececec;
   margin-bottom: 5px;
   font-size: 10px;
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
+  width: 100%;
+  border-top: 1px dashed #ececec;
+  padding: 0;
 }
 
+.b-a-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .restaurant-image {
   width: 100%;
   height: 150px;
@@ -70,9 +106,80 @@ a {
 }
 
 .booking-button {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border-color: green;
+  background-color: #fff;
   float: right;
+  text-align: center;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.smiley {
+  height: 10px;
+  width: 10px;
+}
+
+.rating {
+  margin-bottom: 5px;
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #ececec;
+}
+
+.rating-container p {
+  white-space: nowrap;
+}
+.rating-button {
+  border: none;
+  /*border-radius: 50%;
+  width: 50px; */
+}
+
+.rating-button img {
+  height: 30px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    text-align: left;
+    padding: 20px;
+  }
+  h2 {
+    display: inline-block;
+  }
+
+  .card-container {
+    padding: 0 50px;
+  }
+
+  .form-container {
+    justify-content: space-between;
+  }
+
+  .mobile-title {
+    display: none;
+  }
+}
+
+@media (min-width: 1240px) {
+  .card-container {
+    padding: 0 100px;
+  }
 }

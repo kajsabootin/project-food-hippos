@@ -10,10 +10,40 @@
 
   <body>
     <h1>Seafood restaurants in Lisbon</h1>
+    <h2 class="mobile-title">Restaurants open and online</h2>
     <article class="card-container">
-      <h2>Restauranger öppna & online</h2>
+      <div class="form-container">
+        <h2>Restaurants open and online</h2>
+
+        <div class="filter-container">
+          <form action="" class="filter" id="filter-price">
+            <p>Filter on price</p>
+            <input type="radio" id="lowPrice" name="cost" value="low" />
+            <label for="lowPrice">€</label>
+            <input type="radio" id="mediumPrice" name="cost" value="medium" />
+            <label for="mediumPrice">€€</label>
+            <input type="radio" id="highPrice" name="cost" value="high" />
+            <label for="highPrice">€€€</label>
+            <button id="filterButton">Filter</button>
+          </form>
+
+          <div class="rating-container">
+            <p>Filter on rating</p>
+            <button type="button" id="rating-button" class="rating-button">
+              <img src="images/good.png" alt="Thumb pointing up" />
+            </button>
+          </div>
+        </div>
+      </div>
+
       <section id="restaurants" class="restaurant-card"></section>
     </article>
     <script src="script.js"></script>
   </body>
 </html>
+
+<!--
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+-->
