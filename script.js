@@ -13,9 +13,14 @@ fetch(url, { headers: { "user-key": apiKey } })
       console.log(resto.restaurant.name);
       restaurantContainer.innerHTML += `<a href= ${resto.restaurant.url} class="resturant-card">
         <img class="restaurant-image" src= ${resto.restaurant.photos[0].photo.thumb_url}> 
+
+
       <h3>${resto.restaurant.name}</h3> 
+
+
       <p class="address">${resto.restaurant.location.address}</p>
-      <hr>
+      <button class="booking-button">KNAPPEN</button>
+      <br>
       <p class="average-cost">${resto.restaurant.average_cost_for_two} ${resto.restaurant.user_rating.aggregate_rating}</p>
       
       </a>`;
